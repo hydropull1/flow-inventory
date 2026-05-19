@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Scanner</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <nav class="top-nav">
+        <a class="nav-link" href="/">Scanner</a>
+        <a class="nav-link" href="/catalog.html">Catalog</a>
+      </nav>
+
+      <header class="header">
+        <h1>Product Scanner</h1>
+        <p class="subtitle">
+          Upload shelf photos. Claude checks the master and store catalogs,
+          then builds a combined inventory list.
+        </p>
+      </header>
+
+      <div class="store-bar">
+        <label class="store-label" for="storeIdInput">Store ID</label>
+        <input type="text" id="storeIdInput" class="store-input" placeholder="default" />
+      </div>
+
+      <section class="upload-section">
+        <label class="upload-zone" id="uploadZone" for="fileInput">
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            multiple
+            hidden
+          />
+          <div class="upload-icon" aria-hidden="true">📷</div>
+          <span class="upload-label">Choose photos or drag them here</span>
+          <span class="upload-hint">JPEG, PNG, WebP — up to 10 MB each, 20 max</span>
+        </label>
+
+        <div class="preview-grid hidden" id="previewGrid"></div>
+
+        <div class="upload-actions hidden" id="uploadActions">
+          <button type="button" class="btn btn-secondary" id="clearBtn">
+            Clear all
+          </button>
+          <button type="button" class="btn btn-primary" id="analyzeBtn">
+            Analyze shelves
+          </button>
+        </div>
+      </section>
+
+      <div class="status hidden" id="status" role="status"></div>
+
+      <section class="results hidden" id="results">
+        <p class="summary" id="summary"></p>
+        <ul class="product-list" id="productList"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
