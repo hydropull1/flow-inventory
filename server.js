@@ -340,8 +340,7 @@ const server = createServer(async (req, res) => {
     return;
   }
   serveStatic(filePath, res);
-});
-
+}); 
 const port = Number(process.env.PORT) || 3000;
 server.listen(port, () => {
   console.log(`Product Scanner running at http://localhost:${port}`);

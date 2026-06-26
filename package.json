@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "powershell -NoProfile -ExecutionPolicy Bypass -File ./start.ps1"
   }
 }
